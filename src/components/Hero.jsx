@@ -44,7 +44,7 @@ const Hero = () => {
         </span>{" "}
         at a time.
       </h2>
-      <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-base">
+      <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-lg text-neutral-200">
         You are not your job, you&apos;re not how much money you have in the
         bank. You are not the car you drive. You&apos;re not the contents of
         your wallet.
