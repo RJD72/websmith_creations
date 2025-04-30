@@ -1,7 +1,12 @@
+import Logo from "../assets/logo.png";
+
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm sticky top-0 z-100">
+    <div className="navbar bg-base-100 sticky top-0 z-100 md:px-10">
       <div className="navbar-start">
+        <a href="/" className="">
+          <img src={Logo} className="h-24" />
+        </a>
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -43,7 +48,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -69,7 +73,9 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a className="btn bg-[#dd9224] hover:bg-[#9a6517] hover:text-white font-semibold text-lg rounded-full text-neutral">
+          Contact
+        </a>
       </div>
     </div>
   );

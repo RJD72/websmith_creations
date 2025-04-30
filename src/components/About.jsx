@@ -7,13 +7,13 @@ const About = () => {
   return (
     <div className="flex flex-col overflow-hidden">
       <ContainerScroll
-      // titleComponent={
-      //   <>
-      //     <h2 className="text-4xl font-semibold text-black dark:text-white">
-      //       <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none"></span>
-      //     </h2>
-      //   </>
-      // }
+        titleComponent={
+          <>
+            <h2 className="text-4xl font-semibold text-black dark:text-white">
+              About Me
+            </h2>
+          </>
+        }
       >
         <div className=" flex justify-center md:block">
           <img

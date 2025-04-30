@@ -6,6 +6,8 @@ import Skills from "./components/Skills";
 import TabsComponent from "./components/TabsComponent";
 import TimelineComponent from "./components/TimelineComponent";
 import InfiniteMovingCardsComponent from "./components/InfiniteMovingCardsComponents";
+import ServicesContainer from "./components/ServiceContainer";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
       <TabsComponent />
       <TimelineComponent />
       <InfiniteMovingCardsComponent />
+      <ServicesContainer />
+      <Contact />
       <Footer />
     </div>
   );
