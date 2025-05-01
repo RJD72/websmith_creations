@@ -1,73 +1,88 @@
-"use client";
-
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { useOutsideClick } from "./ui/use-outside-click";
+import { AnimatePresence, motion } from "motion/react"; // animation components for mounting/unmounting transitions
+import { useOutsideClick } from "./ui/use-outside-click"; // custom hook to detect clicks outside a given element
+import HuronBjj from "../assets/huronbjj.png";
 
+// ExpandableCard: displays a grid of cards that can expand into a modal-like view on click
 const ExpandableCard = () => {
+  // "active" holds the currently selected card object or null when none is active
   const [active, setActive] = useState(null);
+
+  // Ref attached to the expanded card container for detecting outside clicks
   const ref = useRef(null);
+
+  // Unique identifier for this component instance, used in layout animations
   const id = useId();
 
+  // Side effect: lock scrolling and handle Escape key to close expanded card
   useEffect(() => {
     function onKeyDown(event) {
       if (event.key === "Escape") {
+        // Close the active card when Escape is pressed
         setActive(false);
       }
     }
 
     if (active && typeof active === "object") {
+      // Disable page scrolling when a card is active
       document.body.style.overflow = "hidden";
     } else {
+      // Restore page scrolling when no card is active
       document.body.style.overflow = "auto";
     }
 
+    // Listen for keydown events globally
     window.addEventListener("keydown", onKeyDown);
+    // Cleanup the event listener on unmount or when "active" changes
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
+  // Close the expanded card if a click occurs outside of it
   useOutsideClick(ref, () => setActive(null));
 
   return (
     <>
+      <h2 className="text-center text-2xl">Projects</h2>
+      {/* Backdrop overlay behind expanded card */}
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }} // start transparent
+            animate={{ opacity: 1 }} // fade in
+            exit={{ opacity: 0 }} // fade out on unmount
             className="fixed inset-0 bg-black/20 h-full w-full z-10"
           />
         )}
       </AnimatePresence>
+
+      {/* Expanded card modal */}
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0 grid place-items-center z-[100]">
+            {/* Close button (visible on small screens) */}
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{
                 opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
+                transition: { duration: 0.05 }, // quick fade out
               }}
               className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
-              onClick={() => setActive(null)}
+              onClick={() => setActive(null)} // close on click
             >
-              <CloseIcon />
+              <CloseIcon /> // X icon component
             </motion.button>
+
+            {/* Container for the expanded card content */}
             <motion.div
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              layoutId={`card-${active.title}-${id}`} // shared layout animation key
+              ref={ref} // attach ref for outside clicks
+              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
+              {/* Card image with shared layout for smooth transition */}
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
                   width={200}
@@ -79,8 +94,9 @@ const ExpandableCard = () => {
               </motion.div>
 
               <div>
+                {/* Header: title, description, and CTA */}
                 <div className="flex justify-between items-start p-4">
-                  <div className="">
+                  <div>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
                       className="font-bold text-neutral-700 dark:text-neutral-200"
@@ -95,23 +111,27 @@ const ExpandableCard = () => {
                     </motion.p>
                   </div>
 
+                  {/* Call-to-action button */}
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
-                    target="_blank"
+                    target="_blank" // open link in new tab
                     className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
                   >
                     {active.ctaText}
                   </motion.a>
                 </div>
+
+                {/* Scrollable main content area */}
                 <div className="pt-4 relative px-4">
                   <motion.div
                     layout
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 0 }} // fade in
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    exit={{ opacity: 0 }} // fade out on close
                     className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
+                    {/* Render content function or JSX directly */}
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
@@ -122,15 +142,17 @@ const ExpandableCard = () => {
           </div>
         ) : null}
       </AnimatePresence>
+
+      {/* List of cards to display when no card is expanded */}
       <ul className="max-w-2xl mx-auto w-full gap-4">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
-            layoutId={`card-${card.title}-${id}`}
+            layoutId={`card-${card.title}-${id}`} // shared layout for expand/collapse
             key={`card-${card.title}-${id}`}
-            onClick={() => setActive(card)}
+            onClick={() => setActive(card)} // mark this card active on click
             className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row ">
+            <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <img
                   width={100}
@@ -140,7 +162,7 @@ const ExpandableCard = () => {
                   className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
               </motion.div>
-              <div className="">
+              <div>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
                   className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
@@ -155,6 +177,8 @@ const ExpandableCard = () => {
                 </motion.p>
               </div>
             </div>
+
+            {/* CTA button for each card */}
             <motion.button
               layoutId={`button-${card.title}-${id}`}
               className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
@@ -170,20 +194,15 @@ const ExpandableCard = () => {
 
 export default ExpandableCard;
 
+// CloseIcon: renders an animated SVG "X" icon to close the expanded card
 export const CloseIcon = () => {
   return (
     <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
+      initial={{ opacity: 0 }} // start invisible
+      animate={{ opacity: 1 }} // fade in
       exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
+        opacity: 0, // fade out
+        transition: { duration: 0.05 }, // quick fade
       }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -196,7 +215,9 @@ export const CloseIcon = () => {
       strokeLinejoin="round"
       className="h-4 w-4 text-black"
     >
+      {/* Transparent path to reset canvas */}
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      {/* Diagonal lines forming the 'X' */}
       <path d="M18 6l-12 12" />
       <path d="M6 6l12 12" />
     </motion.svg>
@@ -205,24 +226,28 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Lana Del Rey",
-    title: "Summertime Sadness",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "Brazilian Jiu-Jitsu Gym",
+    title: "Huron BJJ",
+    src: HuronBjj,
+    ctaText: "Visit",
+    ctaLink: "https://www.huronbjj.com",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br />
-          Her songs often explore themes of tragic romance, glamour, and
-          melancholia, drawing inspiration from both contemporary and vintage
-          pop culture. With a career that has seen numerous critically acclaimed
-          albums, Lana Del Rey has established herself as a unique and
-          influential figure in the music industry, earning a dedicated fan base
-          and numerous accolades.
+          I designed and built a fully responsive, multi-page website for Huron
+          Brazilian Jiu-Jitsu, crafting every page with semantic HTML5 and
+          modern CSS3 to ensure clarity and maintainability. Leveraging
+          Bootstrap 5’s grid system and utility classes, I created a
+          mobile-first layout that adapts seamlessly across all screen sizes,
+          while custom CSS refinements reinforce the club’s brand identity. To
+          boost performance, I implemented lazy-loading for images via a concise
+          vanilla JavaScript snippet, reducing initial load times without
+          sacrificing visual impact. Interactive class schedules and contact
+          forms are embedded through Gymdesk’s widget API, giving site visitors
+          a frictionless way to book sessions or get in touch. Finally, I
+          optimized meta tags and structured markup for SEO, ensuring the site
+          ranks well for local searches and delivers an accessible,
+          user-friendly experience from desktop to smartphone.
         </p>
       );
     },
@@ -268,50 +293,6 @@ const cards = [
           With a career spanning over four decades, Metallica has released
           numerous hit albums and singles that have garnered them a massive fan
           following both in the United States and abroad.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Led Zeppelin",
-    title: "Stairway To Heaven",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br />
-          Their songs often reflect a blend of blues, hard rock, and folk music,
-          capturing the essence of the 1970s rock era. With a career spanning
-          over a decade, Led Zeppelin has released numerous hit albums and
-          singles that have garnered them a massive fan following both in the
-          United Kingdom and abroad.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Mustafa Zahid",
-    title: "Toh Phir Aao",
-    src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          "Aawarapan", a Bollywood movie starring Emraan Hashmi, is renowned for
-          its intense storyline and powerful performances. Directed by Mohit
-          Suri, the film has become a significant work in the Indian film
-          industry. <br /> <br />
-          The movie explores themes of love, redemption, and sacrifice,
-          capturing the essence of human emotions and relationships. With a
-          gripping narrative and memorable music, "Aawarapan" has garnered a
-          massive fan following both in India and abroad, solidifying Emraan
-          Hashmi's status as a versatile actor.
         </p>
       );
     },
