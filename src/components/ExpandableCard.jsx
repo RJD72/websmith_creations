@@ -3,6 +3,8 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react"; // animation components for mounting/unmounting transitions
 import { useOutsideClick } from "./ui/use-outside-click"; // custom hook to detect clicks outside a given element
 import HuronBjj from "../assets/huronbjj.png";
+import Timeless from "../assets/timeless.png";
+import SimpleBlog from "../assets/simpleblog.png";
 
 // ExpandableCard: displays a grid of cards that can expand into a modal-like view on click
 const ExpandableCard = () => {
@@ -253,34 +255,32 @@ const cards = [
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "King Charles Cavaliers",
+    title: "Timless Rustic Acres",
+    src: Timeless,
+    ctaText: "Visit",
+    ctaLink: "https://www.timelessrusticacres.com",
     content: () => {
       return (
         <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br />
-          His songs often reflect the struggles and triumphs of everyday life,
-          capturing the essence of Punjabi culture and traditions. With a career
-          spanning over two decades, Babu Maan has released numerous hit albums
-          and singles that have garnered him a massive fan following both in
-          India and abroad.
+          A modern single-page application designed to connect prospective
+          owners with CKC-registered Cavalier King Charles Spaniel puppies
+          through an interactive gallery, detailed puppy profiles, and a
+          streamlined contact form. Built using Vite + React 18 with React
+          Router enabling seamless client-side navigation , styled end-to-end
+          with Tailwind CSS and Flowbite UI components (via flowbite-react) ,
+          and deployed to GitHub Pages for fast, CDN-backed performance.
         </p>
       );
     },
   },
 
   {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "Blog",
+    title: "My Simple Blog Page",
+    src: SimpleBlog,
+    ctaText: "Visit",
+    ctaLink: "https://my-simple-blog-page.netlify.app/",
     content: () => {
       return (
         <p>

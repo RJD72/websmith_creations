@@ -73,7 +73,7 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#dd9224] hover:bg-[#9a6517] hover:text-white font-semibold text-lg rounded-full text-neutral">
+        <a className="btn hover:border-[#dd9224] text-white font-semibold text-lg rounded-full">
           Contact
         </a>
       </div>
