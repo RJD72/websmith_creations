@@ -3,11 +3,11 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import TabsComponent from "./components/TabsComponent";
 import TimelineComponent from "./components/TimelineComponent";
 import InfiniteMovingCardsComponent from "./components/InfiniteMovingCardsComponents";
 import ServicesContainer from "./components/ServiceContainer";
 import Contact from "./components/Contact";
+import ExpandableCard from "./components/ExpandableCard";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
       <Hero />
       <About />
       <Skills />
-      <TabsComponent />
+      <ExpandableCard />
       <TimelineComponent />
       <InfiniteMovingCardsComponent />
       <ServicesContainer />
