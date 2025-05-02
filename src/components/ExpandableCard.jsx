@@ -45,7 +45,7 @@ const ExpandableCard = () => {
 
   return (
     <>
-      <h2 className="text-center text-2xl">Projects</h2>
+      <h2 className="text-center text-3xl my-6">Projects</h2>
       {/* Backdrop overlay behind expanded card */}
       <AnimatePresence>
         {active && typeof active === "object" && (
@@ -146,28 +146,28 @@ const ExpandableCard = () => {
       </AnimatePresence>
 
       {/* List of cards to display when no card is expanded */}
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-3xl mx-auto w-full">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`} // shared layout for expand/collapse
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)} // mark this card active on click
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 mb-6 md:mb-0 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer "
           >
             <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <img
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                   src={card.src}
                   alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
+                  className="w-full md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
               </motion.div>
               <div>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
+                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-2xl"
                 >
                   {card.title}
                 </motion.h3>
@@ -183,7 +183,7 @@ const ExpandableCard = () => {
             {/* CTA button for each card */}
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              className="mt-4 w-full md:w-24 rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-white backdrop-blur-sm transition-colors hover:bg-white/20 hover:border-[#dd9224]  focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none cursor-pointer"
             >
               {card.ctaText}
             </motion.button>

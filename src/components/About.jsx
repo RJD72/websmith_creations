@@ -9,7 +9,7 @@ const About = () => {
       <ContainerScroll
         titleComponent={
           <>
-            <h2 className="text-4xl font-semibold text-black dark:text-white">
+            <h2 className="text-3xl font-semibold text-black dark:text-white">
               About Me
             </h2>
           </>

@@ -37,25 +37,25 @@ const Hero = () => {
   ];
   return (
     <div className="relative mx-auto flex min-h-screen w-full flex-col items-center justify-center overflow-hidden">
-      <h1 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl">
+      <h1 className="relative z-20 mx-auto max-w-4xl text-center  font-bold text-balance text-white text-4xl lg:text-6xl">
         Custom Websites & Mobile Apps Built to Make You Stand Out
       </h1>
-      <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-lg text-neutral-200">
+      <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-2xl text-neutral-200">
         I'm a freelance web and mobile developer helping small businesses turn
         ideas into high-performance websites and modern mobile apps — optimized
         for speed, design, and SEO.
       </p>
-      <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4">
-        <button className="rounded-md bg-sky-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-sky-700 focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
+      <div className="relative z-20 flex flex-col  md:flex-row items-center justify-center gap-4 pt-4">
+        <button className="rounded-full bg-sky-600 px-6 py-2.5 font-medium text-white transition-colors hover:bg-base-100 hover:border-1 hover:border-[#dd9224] focus:ring-2  focus:ring-offset-2 focus:ring-offset-black focus:outline-none cursor-pointer">
           Get a Free Quote
         </button>
-        <button className="rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
+        <button className="rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-white backdrop-blur-sm transition-colors hover:bg-white/20 hover:border-[#dd9224]  focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none cursor-pointer">
           View My Work
         </button>
       </div>
 
       {/* overlay */}
-      {/* <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40" /> */}
+      <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40" />
       <ThreeDMarquee
         className="pointer-events-none absolute inset-0 min-h-screen w-full"
         images={images}

@@ -4,9 +4,12 @@ const Header = () => {
   return (
     <div className="navbar bg-base-100 sticky top-0 z-100 md:px-10">
       <div className="navbar-start">
-        <a href="/" className="">
-          <img src={Logo} className="h-24" />
-        </a>
+        <div className="flex justify-center items-center">
+          <a href="/" className="mr-4">
+            <img src={Logo} className="h-24" />
+          </a>
+          <h2 className="hidden lg:inline text-2xl">WebSmith Creations</h2>
+        </div>
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -30,21 +33,25 @@ const Header = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Item 1</a>
+              <a>About</a>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <a>Skills & Technology</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>Projects</a>
+            </li>
+            <li>
+              <a>Personal Timeline</a>
+            </li>
+            <li>
+              <a>Testimonials</a>
+            </li>
+            <li>
+              <a>Services Offered</a>
+            </li>
+            <li>
+              <a>Contact</a>
             </li>
           </ul>
         </div>
@@ -73,7 +80,7 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn hover:border-[#dd9224] text-white font-semibold text-lg rounded-full">
+        <a className="btn hover:border-[#dd9224]  bg-sky-600 hover:bg-base-100  text-white font-semibold text-lg rounded-full">
           Contact
         </a>
       </div>
