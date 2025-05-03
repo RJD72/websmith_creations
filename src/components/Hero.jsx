@@ -38,7 +38,11 @@ const Hero = () => {
   return (
     <div className="relative mx-auto flex min-h-screen w-full flex-col items-center justify-center overflow-hidden">
       <h1 className="relative z-20 mx-auto max-w-4xl text-center  font-bold text-balance text-white text-4xl lg:text-6xl">
-        Custom Websites & Mobile Apps Built to Make You Stand Out
+        Custom Websites & Mobile Apps Built to Make You{" "}
+        <span className="rounded-lg bg-sky-600/40 underline decoration-[10px] underline-offset-[16px] decoration-sky-600 inline-block px-4">
+          Stand
+        </span>{" "}
+        Out
       </h1>
       <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-2xl text-neutral-200">
         I'm a freelance web and mobile developer helping small businesses turn
