@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ServiceCard = ({ Icon, title, description }) => (
   <motion.div
-    className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 text-center transition-transform"
+    className="bg-gray-800 shadow-md rounded-xl p-6 text-center transition-transform"
     initial={{ opacity: 0, scale: 0.9 }}
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}

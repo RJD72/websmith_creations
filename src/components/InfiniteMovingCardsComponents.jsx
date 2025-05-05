@@ -3,7 +3,11 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 const InfiniteMovingCardsComponent = () => {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-[#1D232A] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div
+      className="h-[30rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"
+      id="testimonials"
+    >
+      <h2 className="text-3xl mb-8">Testimonials</h2>
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
@@ -16,32 +20,21 @@ const InfiniteMovingCardsComponent = () => {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "WebSmith Creations is top of the line! Rob created our website and we couldn't be happier!",
+    name: "Sarah Garrity",
+    title: "Co-owner of Huron BJJ",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "Big shoutout to @rob.deer, our blue belt and the mastermind behind the design. As a Jiu-Jitsu practitioner himself, Rob understands the energy, culture, and community of our gym, allowing him to perfectly capture our vibe on the site. If you need a professional website that truly reflects your brand, reach out to him on Facebook at WebSmith Creations!",
+    name: "Shaun Garrity",
+    title: "Co-owner of Huron BJJ",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "Rob from Websmith Creations completely exceeded our expectations with our new website! We wanted a site that captured the charm and warmth of our King Charles Cavalier puppies, and Rob delivered exactly that. The design is beautiful, easy to navigate, and truly reflects the heart of our breeding program. What really stood out was Rob’s patience—he took the time to walk us through every step, even though we’re not tech-savvy. If you need a website that works as hard as you do, Rob is the best in the business!",
+    name: "Mike & Angie",
+    title: "Owners of Timeless Rustic Acres",
   },
 ];
 export default InfiniteMovingCardsComponent;

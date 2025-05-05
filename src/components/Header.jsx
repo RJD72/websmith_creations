@@ -1,8 +1,9 @@
 import Logo from "../assets/logo.png";
+import { HiOutlineMail } from "react-icons/hi";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-100 md:px-10">
+    <div className="navbar bg-base-100 sticky top-0 z-100 md:px-10 ">
       <div className="navbar-start">
         <div className="flex justify-center items-center">
           <a href="/" className="mr-4">
@@ -33,25 +34,22 @@ const Header = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>About</a>
+              <a href="#services">Services</a>
             </li>
             <li>
-              <a>Skills & Technology</a>
+              <a href="#about">About</a>
             </li>
             <li>
-              <a>Projects</a>
+              <a href="#skills">Skills</a>
             </li>
             <li>
-              <a>Personal Timeline</a>
+              <a href="#projects">Projects</a>
             </li>
             <li>
-              <a>Testimonials</a>
+              <a href="#testimonials">Testimonials</a>
             </li>
             <li>
-              <a>Services Offered</a>
-            </li>
-            <li>
-              <a>Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -59,29 +57,32 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Item 1</a>
+            <a href="#services">Services</a>
           </li>
           <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a>Item 3</a>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn hover:border-[#dd9224]  bg-sky-600 hover:bg-base-100  text-white font-semibold text-lg rounded-full">
-          Contact
+        <a
+          className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 animate-fade-in-left"
+          href="#contact"
+        >
+          <HiOutlineMail />
+          <span className="ml-3">Contact Me</span>
         </a>
       </div>
     </div>
