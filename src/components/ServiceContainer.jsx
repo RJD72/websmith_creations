@@ -43,7 +43,7 @@ const ServicesContainer = () => {
   ];
 
   return (
-    <section className="max-w-5xl mx-auto py-12 px-4" id="services">
+    <section className="max-w-5xl mx-auto py-12 px-4 mt-36" id="services">
       <h2 className="text-3xl font-semibold text-center mb-10">
         Services Offered
       </h2>

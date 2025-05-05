@@ -2,10 +2,10 @@ import { HiOutlineMail } from "react-icons/hi";
 
 const Contact = () => {
   return (
-    <div className="px-8 mt-20 " id="contact">
+    <div className="px-4 mt-20 " id="contact">
       <h2 className="text-3xl text-center">Contact</h2>
       <form>
-        <div className="max-w-screen-xl my-10 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-10 mx-auto rounded-lg shadow-lg">
+        <div className="max-w-7xl px-2 my-10 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-10 mx-auto rounded-lg shadow-lg">
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight">

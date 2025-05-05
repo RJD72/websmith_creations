@@ -3,11 +3,11 @@ import { HiOutlineMail } from "react-icons/hi";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-100 md:px-10 ">
+    <div className="navbar bg-base-100 sticky top-0 z-50 md:px-10 ">
       <div className="navbar-start">
         <div className="flex justify-center items-center">
           <a href="/" className="mr-4">
-            <img src={Logo} className="h-24" />
+            <img src={Logo} className="h-24 w-auto" />
           </a>
           <h2 className="hidden lg:inline text-2xl">WebSmith Creations</h2>
         </div>
@@ -20,19 +20,15 @@ const Header = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
+          <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li>
               <a href="#services">Services</a>
             </li>

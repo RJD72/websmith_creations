@@ -37,7 +37,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
       id="projects"
     >
       <h2 className="text-3xl text-center mb-10">Projects</h2>
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+      <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
