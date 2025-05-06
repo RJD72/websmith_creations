@@ -1,10 +1,36 @@
 import { HiOutlineMail } from "react-icons/hi";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_1e19qhi",
+        "template_sdedvq3",
+        { name, email, message },
+        "KSPBJcgwe5nJjFjlI"
+      )
+      .then(
+        () => {
+          console.log("Success");
+        },
+        (error) => {
+          console.log("Failed...", error.text);
+        }
+      );
+  };
+
   return (
     <div className="px-4 mt-20 " id="contact">
       <h2 className="text-3xl text-center">Contact</h2>
-      <form>
+      <form onSubmit={sendEmail}>
         <div className="max-w-7xl px-2 my-10 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-10 mx-auto rounded-lg shadow-lg">
           <div className="flex flex-col justify-between">
             <div>
@@ -979,7 +1005,9 @@ const Contact = () => {
                 name="fullname"
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 type="text"
-                placeholder=""
+                placeholder="John Doe"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
               />
             </div>
             <div className="mt-8">
@@ -990,6 +1018,8 @@ const Contact = () => {
                 name="email"
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 type="text"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
             </div>
             <div className="mt-8">
@@ -999,6 +1029,8 @@ const Contact = () => {
               <textarea
                 name="message"
                 className="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
               ></textarea>
             </div>
             <div className="mt-8">
