@@ -28,13 +28,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="px-4 mt-20 " id="contact">
-      <h2 className="text-3xl text-center">Contact</h2>
+    <section className="px-4" id="contact">
+      <h2 className="text-3xl text-center font-semibold">Contact</h2>
       <form onSubmit={sendEmail}>
         <div className="max-w-7xl px-2 my-10 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-10 mx-auto rounded-lg shadow-lg">
           <div className="flex flex-col justify-between">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-semibold leading-tight">
                 Let me solve your challenges!
               </h2>
             </div>
@@ -998,7 +998,7 @@ const Contact = () => {
           </div>
           <div className="">
             <div>
-              <span className="uppercase text-sm text-gray-600 font-bold">
+              <span className=" text-sm text-gray-600 font-semibold">
                 Full Name
               </span>
               <input
@@ -1011,7 +1011,7 @@ const Contact = () => {
               />
             </div>
             <div className="mt-8">
-              <span className="uppercase text-sm text-gray-600 font-bold">
+              <span className=" text-sm text-gray-600 font-semibold">
                 Email
               </span>
               <input
@@ -1023,7 +1023,7 @@ const Contact = () => {
               />
             </div>
             <div className="mt-8">
-              <span className="uppercase text-sm text-gray-600 font-bold">
+              <span className=" text-sm text-gray-600 font-semibold">
                 Message
               </span>
               <textarea

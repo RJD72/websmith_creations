@@ -34,8 +34,8 @@ const Skills = () => {
   ];
 
   return (
-    <section className="mb-24 px-5 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-semibold mb-10 text-center">
+    <section className="mb-30 px-5 max-w-4xl mx-auto">
+      <h2 className="text-3xl font-semibold mb-20 text-center">
         Skills & Technologies
       </h2>
       <IconGrid skills={skills} />

@@ -43,8 +43,11 @@ const ServicesContainer = () => {
   ];
 
   return (
-    <section className="max-w-5xl mx-auto py-12 px-4 mt-36" id="services">
-      <h2 className="text-3xl font-semibold text-center mb-10">
+    <section
+      className="max-w-5xl mx-auto mb-30 pt-40 lg:pt-48 px-4"
+      id="services"
+    >
+      <h2 className="text-3xl font-semibold text-center mb-20">
         Services Offered
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

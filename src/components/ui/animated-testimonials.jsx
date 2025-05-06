@@ -33,11 +33,11 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   };
   return (
     <section
-      className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12 "
+      className="mx-auto max-w-sm px-4 mb-30 antialiased md:max-w-4xl md:px-8 lg:px-12 "
       id="projects"
     >
-      <h2 className="text-3xl text-center mb-10">Projects</h2>
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+      <h2 className="text-3xl text-center mb-20 font-semibold">Projects</h2>
+      <div className="relative grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
@@ -105,7 +105,9 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold ">{testimonials[active].name}</h3>
+            <h3 className="text-2xl font-semibold ">
+              {testimonials[active].name}
+            </h3>
             <p className="hover:underline">
               <a href={testimonials[active].designation} target="_blank">
                 {testimonials[active].name}
@@ -130,7 +132,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                     ease: "easeInOut",
                     delay: 0.02 * index,
                   }}
-                  className="inline-block"
+                  className="inline-block leading-[1.6]"
                 >
                   {word}&nbsp;
                 </motion.span>

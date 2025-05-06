@@ -4,10 +4,10 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 const InfiniteMovingCardsComponent = () => {
   return (
     <section
-      className="h-[30rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"
+      className="h-[35rem] rounded-md flex flex-col antialiased items-center relative overflow-hidden mb-30 lg:mb-0"
       id="testimonials"
     >
-      <h2 className="text-3xl mb-8">Testimonials</h2>
+      <h2 className="text-3xl mb-20 font-semibold">Testimonials</h2>
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
