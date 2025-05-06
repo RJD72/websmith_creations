@@ -3,7 +3,7 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 const InfiniteMovingCardsComponent = () => {
   return (
-    <div
+    <section
       className="h-[30rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"
       id="testimonials"
     >
@@ -13,7 +13,7 @@ const InfiniteMovingCardsComponent = () => {
         direction="right"
         speed="slow"
       />
-    </div>
+    </section>
   );
 };
 

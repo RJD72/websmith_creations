@@ -28,7 +28,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="px-4 mt-20 " id="contact">
+    <section className="px-4 mt-20 " id="contact">
       <h2 className="text-3xl text-center">Contact</h2>
       <form onSubmit={sendEmail}>
         <div className="max-w-7xl px-2 my-10 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-10 mx-auto rounded-lg shadow-lg">
@@ -1005,7 +1005,7 @@ const Contact = () => {
                 name="fullname"
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 type="text"
-                placeholder="John Doe"
+                placeholder=""
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
@@ -1042,7 +1042,7 @@ const Contact = () => {
           </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 export default Contact;

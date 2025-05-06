@@ -3,7 +3,7 @@ import { HiOutlineMail } from "react-icons/hi";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-50 md:px-10 ">
+    <header className="navbar bg-base-100 sticky top-0 z-50 md:px-10 ">
       <div className="navbar-start">
         <div className="flex justify-center items-center">
           <a href="/" className="mr-4">
@@ -28,29 +28,31 @@ const Header = () => {
               />
             </svg>
           </div>
-          <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#testimonials">Testimonials</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
+          <nav>
+            <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#testimonials">Testimonials</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <nav className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <a href="#services">Services</a>
@@ -71,7 +73,7 @@ const Header = () => {
             <a href="#contact">Contact</a>
           </li>
         </ul>
-      </div>
+      </nav>
       <div className="navbar-end">
         <a
           className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 animate-fade-in-left"
@@ -81,7 +83,7 @@ const Header = () => {
           <span className="ml-3">Contact Me</span>
         </a>
       </div>
-    </div>
+    </header>
   );
 };
 export default Header;

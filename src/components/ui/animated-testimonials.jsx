@@ -32,7 +32,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div
+    <section
       className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12 "
       id="projects"
     >
@@ -153,6 +153,6 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const IconGrid = ({ skills }) => {
   return (
-    <div
+    <section
       className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6"
       id="skills"
     >
@@ -24,7 +24,7 @@ const IconGrid = ({ skills }) => {
           </motion.div>
         );
       })}
-    </div>
+    </section>
   );
 };
 

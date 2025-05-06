@@ -6,7 +6,7 @@ import Vite from "../assets/icons/vite-48.png";
 const About = () => {
   return (
     // About
-    <div
+    <section
       className="w-full h-full m-auto flex items-center justify-center py-20"
       id="about"
     >
@@ -77,7 +77,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default About;
