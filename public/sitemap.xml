@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.websmithcreations.ca/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.websmithcreations.ca/#services</loc>
+  </url>
+  <url>
+    <loc>https://www.websmithcreations.ca/#about</loc>
+  </url>
+  <url>
+    <loc>https://www.websmithcreations.ca/#skills</loc>
+  </url>
+  <url>
+    <loc>https://www.websmithcreations.ca/#projects</loc>
+  </url>
+  <url>
+    <loc>https://www.websmithcreations.ca/#testimonials</loc>
+  </url>
+  <url>
+    <loc>https://www.websmithcreations.ca/#contact</loc>
+  </url>
+  <!-- Add other anchor sections -->
+</urlset>

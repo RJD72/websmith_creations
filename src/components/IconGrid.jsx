@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 
 const IconGrid = ({ skills }) => {
   return (
-    <section
-      className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6"
-      id="skills"
-    >
+    <section className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6">
       {skills.map((skill, index) => {
         const SkillIcon = skill.icon;
         return (

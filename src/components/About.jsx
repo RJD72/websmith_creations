@@ -5,8 +5,7 @@ import Vite from "../assets/icons/vite-48.png";
 
 const About = () => {
   return (
-    // About
-    <section className="mb-30">
+    <section className="mb-30" id="about">
       <h2 className="text-3xl text-center mb-20 font-semibold">About</h2>
       <div
         className="w-full h-full m-auto flex items-center justify-center"
@@ -41,7 +40,7 @@ const About = () => {
               <img
                 className="rounded-full relative object-cover right-0 sm:w-[25rem] sm:h-[25rem] w-[12rem] h-[12rem] outline sm:outline-offset-[.77em] outline-offset-[.37em] outline-gray-300 mr-4"
                 src={Avatar}
-                alt="About us"
+                alt="Rob Deer, freelance web and mobile developer"
               />
             </div>
 

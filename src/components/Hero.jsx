@@ -3,7 +3,10 @@ import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 
 const Hero = () => {
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:pb-30 text-center pt-16 2xl:pt-30">
+    <section
+      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:pb-30 text-center pt-16 2xl:pt-30"
+      id="hero"
+    >
       <p className="mx-auto -mt-4 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
         Welcome to
         <span className="border-b border-dotted border-slate-300">
