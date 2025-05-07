@@ -10,6 +10,7 @@ const Hero = () => {
       <p className="mx-auto -mt-4 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
         Welcome to
         <span className="border-b border-dotted border-slate-300">
+          {" "}
           WebSmith Creations
         </span>
       </p>
