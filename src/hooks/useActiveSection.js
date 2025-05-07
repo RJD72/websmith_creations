@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useActiveSection = (sectionIds) => {
+export const useActiveSection = (sectionIds) => {
   const [active, setActive] = useState("");
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const useActiveSection = (sectionIds) => {
         });
       },
       {
-        threshold: 0.4,
+        threshold: 0.4, // tweak this if needed for better responsiveness
       }
     );
 
@@ -32,4 +32,3 @@ const useActiveSection = (sectionIds) => {
 
   return active;
 };
-export default useActiveSection;
