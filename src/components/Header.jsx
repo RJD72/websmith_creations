@@ -2,6 +2,12 @@ import Logo from "../assets/logo.png";
 import { HiOutlineMail } from "react-icons/hi";
 
 const Header = () => {
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <header className="navbar bg-base-100 sticky top-0 z-50 md:px-10 ">
       <div className="navbar-start">
@@ -31,22 +37,70 @@ const Header = () => {
           <nav>
             <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
               <li>
-                <a href="#services">Services</a>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("services");
+                  }}
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("about");
+                  }}
+                >
+                  About
+                </a>
               </li>
               <li>
-                <a href="#skills">Skills</a>
+                <a
+                  href="#skills"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("skills");
+                  }}
+                >
+                  Skills
+                </a>
               </li>
               <li>
-                <a href="#projects">Projects</a>
+                <a
+                  href="#projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("projects");
+                  }}
+                >
+                  Projects
+                </a>
               </li>
               <li>
-                <a href="#testimonials">Testimonials</a>
+                <a
+                  href="#testimonials"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("testimonials");
+                  }}
+                >
+                  Testimonials
+                </a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("contact");
+                  }}
+                >
+                  Contact
+                </a>
               </li>
             </ul>
           </nav>

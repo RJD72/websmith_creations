@@ -70,7 +70,16 @@ const About = () => {
                 <br /> I'm currently focused on continually growing my skills
                 and building a freelance business that blends web and mobile
                 development. I'm excited to see where this journey leads — and
-                I'm always ready for the next challenge.
+                I'm always ready for the next challenge. <br />
+                <br /> Check out my{" "}
+                <a href="#services" className="text-blue-500 hover:underline">
+                  services
+                </a>{" "}
+                or view my{" "}
+                <a href="#projects" className="text-blue-500 hover:underline">
+                  portfolio
+                </a>{" "}
+                to see examples of my work.
               </p>
             </div>
           </div>
