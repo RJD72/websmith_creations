@@ -1,67 +1,32 @@
-import React from "react";
-import ServiceCard from "./ServiceCard";
-import {
-  FaLaptopCode,
-  FaMobileAlt,
-  FaServer,
-  FaPencilRuler,
-  FaSearch,
-} from "react-icons/fa";
+import { services } from "../data/siteContent";
+import SectionHeading from "./SectionHeading";
 
-const ServicesContainer = () => {
-  const services = [
-    {
-      title: "Web Design & Development",
-      description:
-        "Responsive websites built with modern technologies like React, HTML/CSS, and Tailwind CSS.",
-      icon: FaLaptopCode,
-    },
-    {
-      title: "Mobile App Development",
-      description:
-        "Cross-platform mobile applications using React Native, Expo, and NativeWind.",
-      icon: FaMobileAlt,
-    },
-    {
-      title: "Website Maintenance & Hosting",
-      description:
-        "Reliable hosting, updates, security enhancements, and regular backups for your website.",
-      icon: FaServer,
-    },
-    {
-      title: "UI/UX Optimization",
-      description:
-        "Improve user experience with thoughtful design, usability enhancements, and accessibility.",
-      icon: FaPencilRuler,
-    },
-    {
-      title: "SEO Strategies",
-      description:
-        "Optimize your website content for search engines, improving visibility and attracting visitors.",
-      icon: FaSearch,
-    },
-  ];
-
-  return (
-    <section
-      className="max-w-5xl mx-auto mb-30 pt-40 lg:pt-48 px-4"
-      id="services"
-    >
-      <h2 className="text-3xl font-semibold text-center mb-20">
-        Services Offered
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            Icon={service.icon}
-            title={service.title}
-            description={service.description}
-          />
-        ))}
+const ServicesContainer = () => (
+  <section className="section section--ink" id="services">
+    <div className="container">
+      <SectionHeading
+        eyebrow="Services"
+        title="The practical website help your business needs."
+        description="From a first professional website to ongoing improvements, the work stays focused on clarity, usability and dependable support."
+      />
+      <div className="services-grid">
+        {services.map((service) => {
+          const ServiceIcon = service.icon;
+          return (
+            <article className="service-card" key={service.title}>
+              <ServiceIcon aria-hidden="true" />
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </article>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+      <p className="services-note">
+        Every website includes responsive design and search-friendly foundations
+        as part of a solid build.
+      </p>
+    </div>
+  </section>
+);
 
 export default ServicesContainer;

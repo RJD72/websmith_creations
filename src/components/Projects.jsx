@@ -1,32 +1,82 @@
-import { AnimatedTestimonials } from "./ui/animated-testimonials";
-import HuronBJJ from "../assets/huronbjj.png";
-import Timeless from "../assets/timeless.png";
-import SimpleBlog from "../assets/simpleblog.png";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { projects } from "../data/siteContent";
+import SectionHeading from "./SectionHeading";
 
-const Projects = () => {
-  const testimonials = [
-    {
-      quote:
-        "I designed and built a fully responsive, multi-page website for Huron Brazilian Jiu-Jitsu, crafting every page with semantic HTML5 and modern CSS3 to ensure clarity and maintainability. Leveraging Bootstrap 5’s grid system and utility classes, I created a mobile-first layout that adapts seamlessly across all screen sizes,while custom CSS refinements reinforce the club’s brand identity. To boost performance, I implemented lazy-loading for images via a concise vanilla JavaScript snippet, reducing initial load times without sacrificing visual impact. Interactive class schedules and contact forms are embedded through Gymdesk’s widget API, giving site visitors a frictionless way to book sessions or get in touch. Finally, I optimized meta tags and structured markup for SEO, ensuring the site ranks well for local searches and delivers an accessible, user-friendly experience from desktop to smartphone..",
-      name: "Huron BJJ",
-      designation: "https://www.huronbjj.com",
-      src: HuronBJJ,
-    },
-    {
-      quote:
-        "A modern single-page application designed to connect prospective owners with CKC-registered Cavalier King Charles Spaniel puppies through an interactive gallery, detailed puppy profiles, and a streamlined contact form. Built using Vite + React 18 with React Router enabling seamless client-side navigation , styled end-to-end with Tailwind CSS and Flowbite UI components (via flowbite-react), and deployed to GitHub Pages for fast, CDN-backed performance.",
-      name: "Timeless Rustic Acres",
-      designation: "https://www.timelessrusticacres.com",
-      src: Timeless,
-    },
-    {
-      quote:
-        "A full‑stack blogging application that lets users register, write, edit, and comment on posts through a smooth, single‑page interface. The front‑end is built with React and Vite for blazing‑fast hot modulere placement and lean production bundles, using React Router to handle client‑side navigation without full page reloads. The back‑end runs on Express.js, exposing RESTful endpoints secured with JSON Web Tokens to manage authentication and CRUD operations. With its clear separation between client/ and server/, this project delivers a maintainable, high‑performance solution for content creators.",
-      name: "Simple Blog",
-      designation: "https://my-simple-blog-page.netlify.app/",
-      src: SimpleBlog,
-    },
-  ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
-};
+const Projects = () => (
+  <section className="section" id="work">
+    <div className="container">
+      <SectionHeading
+        eyebrow="Selected client work"
+        title="Real websites for real Ontario businesses."
+        description="Each project starts with the same question: what does a potential customer need to see, understand or do next?"
+      />
+      <div className="projects-list">
+        {projects.map((project) => (
+          <article className="project-card" key={project.name}>
+            <div className="browser-frame">
+              <div className="browser-frame__bar" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+                <div>{project.url.replace(/^https?:\/\/(www\.)?/, "")}</div>
+              </div>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.imageAlt}
+                  width={project.imageWidth}
+                  height={project.imageHeight}
+                  loading="lazy"
+                />
+              ) : (
+                <div
+                  className="project-placeholder"
+                  role="img"
+                  aria-label="DP Music Therapy project image placeholder"
+                >
+                  <div className="project-placeholder__mark" aria-hidden="true">
+                    dp
+                  </div>
+                  <div>
+                    <strong>DP Music Therapy</strong>
+                    <span>Project image coming soon</span>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="project-card__content">
+              <p className="project-card__type">{project.type}</p>
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+              <ul className="feature-list">
+                {project.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+              <div
+                className="tag-list"
+                aria-label={`${project.name} technologies`}
+              >
+                {project.technologies.map((technology) => (
+                  <span key={technology}>{technology}</span>
+                ))}
+              </div>
+              <a
+                className="text-link"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View live site
+                <FaArrowUpRightFromSquare aria-hidden="true" />
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 export default Projects;
