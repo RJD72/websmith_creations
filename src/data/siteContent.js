@@ -1,5 +1,6 @@
 import HuronBjjImage from "../assets/huronbjj.png";
 import TimelessImage from "../assets/timeless.png";
+import DpMusicImage from "../assets/dpmusic.png";
 import {
   FaArrowTrendUp,
   FaLaptopCode,
@@ -54,8 +55,10 @@ export const projects = [
     name: "DP Music Therapy",
     type: "Music therapy practice",
     url: "https://www.dpmusictherapy.com/index.html",
-    image: null,
-    imageAlt: "",
+    image: DpMusicImage,
+    imageAlt: "DP Music Therapy website shown on desktop and mobile screens",
+    imageWidth: 1896,
+    imageHeight: 974,
     description:
       "A calm, reassuring website that makes therapy services easier to understand and gives families, individuals and facilities a clear route to connect.",
     features: [
@@ -63,7 +66,7 @@ export const projects = [
       "Responsive, accessible page structure",
       "Direct contact pathways",
     ],
-    technologies: ["Responsive design", "HTML", "CSS"],
+    technologies: ["Responsive design", "HTML5", "Tailwind CSS", "JavaScript"],
   },
 ];
 

@@ -1,4 +1,4 @@
-import Avatar from "../assets/avatar2.jpeg";
+import Avatar from "../assets/avatar2.png";
 import SectionHeading from "./SectionHeading";
 
 const About = () => (
