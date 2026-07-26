@@ -13,7 +13,13 @@ const Hero = () => (
           and make it easy for customers to take the next step.
         </p>
         <div className="hero__actions">
-          <a className="button button--primary" href="#contact">
+          <a
+            className="button button--primary"
+            href="#contact"
+            data-analytics-event="cta_click"
+            data-analytics-label="Start a project"
+            data-analytics-location="homepage hero"
+          >
             Start a project <FaArrowRight aria-hidden="true" />
           </a>
           <a className="button button--secondary" href="#work">

@@ -12,10 +12,11 @@ const Footer = () => (
         </div>
       </div>
       <nav className="footer-nav" aria-label="Footer navigation">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="/#work">Work</a>
+        <a href="/#services">Services</a>
+        <a href="/web-design-huron-county/">Huron County web design</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
       </nav>
       <div className="social-links" aria-label="Social media">
         <a

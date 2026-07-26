@@ -40,7 +40,13 @@ const About = () => (
           business is also the person designing, developing and supporting your
           website.
         </p>
-        <a className="text-link" href="#contact">
+        <a
+          className="text-link"
+          href="#contact"
+          data-analytics-event="cta_click"
+          data-analytics-label="Tell me about your project"
+          data-analytics-location="about"
+        >
           Tell me about your project
         </a>
       </div>

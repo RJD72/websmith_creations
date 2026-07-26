@@ -1,5 +1,6 @@
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { projects } from "../data/siteContent";
+import ProjectVisual from "./ProjectVisual";
 import SectionHeading from "./SectionHeading";
 
 const Projects = () => (
@@ -13,37 +14,7 @@ const Projects = () => (
       <div className="projects-list">
         {projects.map((project) => (
           <article className="project-card" key={project.name}>
-            <div className="browser-frame">
-              <div className="browser-frame__bar" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <div>{project.url.replace(/^https?:\/\/(www\.)?/, "")}</div>
-              </div>
-              {project.image ? (
-                <img
-                  src={project.image}
-                  alt={project.imageAlt}
-                  width={project.imageWidth}
-                  height={project.imageHeight}
-                  loading="lazy"
-                />
-              ) : (
-                <div
-                  className="project-placeholder"
-                  role="img"
-                  aria-label="DP Music Therapy project image placeholder"
-                >
-                  <div className="project-placeholder__mark" aria-hidden="true">
-                    dp
-                  </div>
-                  <div>
-                    <strong>DP Music Therapy</strong>
-                    <span>Project image coming soon</span>
-                  </div>
-                </div>
-              )}
-            </div>
+            <ProjectVisual project={project} />
             <div className="project-card__content">
               <p className="project-card__type">{project.type}</p>
               <h3>{project.name}</h3>
@@ -61,16 +32,32 @@ const Projects = () => (
                   <span key={technology}>{technology}</span>
                 ))}
               </div>
-              <a
-                className="text-link"
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View live site
-                <FaArrowUpRightFromSquare aria-hidden="true" />
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
+              <div className="project-card__actions">
+                <a
+                  className="button button--primary"
+                  href={project.internalUrl}
+                  data-analytics-event="case_study_click"
+                  data-analytics-label={project.name}
+                  data-analytics-location="homepage project card"
+                >
+                  Read case study
+                  <FaArrowRight aria-hidden="true" />
+                </a>
+                <a
+                  className="text-link"
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-analytics-event="outbound_click"
+                  data-analytics-client={project.name}
+                  data-analytics-label="View live site"
+                  data-analytics-location="homepage project card"
+                >
+                  View live site
+                  <FaArrowUpRightFromSquare aria-hidden="true" />
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </div>
             </div>
           </article>
         ))}

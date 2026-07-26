@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <a className="brand" href="#top" aria-label="WebSmith Creations home">
+        <a className="brand" href="/" aria-label="WebSmith Creations home">
           <img
             src={Logo}
             alt="WebSmith Creations"
@@ -33,7 +33,13 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <a className="button button--small button--primary" href="#contact">
+          <a
+            className="button button--small button--primary"
+            href="/#contact"
+            data-analytics-event="cta_click"
+            data-analytics-label="Start a project"
+            data-analytics-location="header"
+          >
             Start a project
           </a>
         </nav>
@@ -71,7 +77,10 @@ const Header = () => {
           ))}
           <a
             className="button button--primary"
-            href="#contact"
+            href="/#contact"
+            data-analytics-event="cta_click"
+            data-analytics-label="Start a project"
+            data-analytics-location="mobile header"
             onClick={() => setMenuOpen(false)}
           >
             Start a project

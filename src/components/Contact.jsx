@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { HiOutlineMail } from "react-icons/hi";
 import SectionHeading from "./SectionHeading";
+import { trackEvent } from "../lib/analytics";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -29,6 +30,10 @@ const Contact = () => {
       setName("");
       setEmail("");
       setMessage("");
+      trackEvent("generate_lead", {
+        form_name: "project enquiry",
+        form_location: window.location.pathname,
+      });
     } catch {
       setStatus("error");
       setFeedback(
